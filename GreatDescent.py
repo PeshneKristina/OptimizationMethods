@@ -85,7 +85,7 @@ def greatDescent(f, x0, y0):
     y = y0 - alpha * get_diff_f_in_point(x0, y0, get_diff_f(f(x1, x2), x2))
     print("x,y", x, y)
     # Проверяем условие остановки
-    #print("max,eps",get_norm(x - x0, y - y0),eps)
+    print("norma,eps",get_norm(x - x0, y - y0),eps)
     if get_norm(x - x0, y - y0) < eps:
         return [x, y]
     return greatDescent(f, x, y)
@@ -94,10 +94,10 @@ def greatDescent(f, x0, y0):
 def main():
     print("Метод наискорейшего спуска для f1")
     min1 = greatDescent(f1, 0.5, 1.5)
-    print("точка минимума f1: ", min1)
-    print("минимум f1: ", f1(min1[0], min1[1]))
     print("Метод наискорейшего спуска для f2")
     min2 = greatDescent(f2, -2.048, 2.048)
+    print("точка минимума f1: ", min1)
+    print("минимум f1: ", f1(min1[0], min1[1]))
     print("точка минимума f2: ", min2)
     print("минимум f1: ", f2(min2[0], min2[1]))
 
